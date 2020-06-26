@@ -1,16 +1,12 @@
 @import "variables";
 
 @font-face{
-  font-family: "Montserrat ExtraBold";
-  src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format('ttf');
-  font-weight: bold;
-  font-style: normal;
+  font-family: "OpenSansBold";
+  src: url("../fonts/OpenSans/OpenSans-Bold.ttf") format('ttf');
 }
 @font-face{
-  font-family: 'OpenSans';
+  font-family: "OpenSans";
   src: url("../fonts/OpenSans/OpenSans-Regular.ttf") format('ttf');
-  font-weight: normal;
-  font-style: normal;
 }
 body {
   font-family: OpenSans, sans-serif;
@@ -35,6 +31,7 @@ body {
       display: flex;
       justify-content: start;
       align-items: center;
+      overflow: hidden;
       &:focus {
         outline: none;
       }
@@ -49,6 +46,7 @@ body {
         display: flex;
         justify-content: start;
         align-items: center;
+        overflow: hidden;
         &:focus {
           outline: none;
         }
@@ -56,76 +54,54 @@ body {
     }
   }
 }
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 40px;
+}
 .card {
-  position: relative;
-  width: 300px;
+  width: 100%;
   border-right: 1px solid $border-color;
+  margin-bottom: 20px;
   padding-right: 20px;
-  &__title {
-    font-family: 'Montserrat ExtraBold', sans-serif;
-    display: block;
-    font-size: 24px;
-    color: #333333;
-  }
-  &__desc {
-    display: block;
-    margin-top: 10px;
-  }
-  &__link {
-    display: block;
-    margin-top: 10px;
-
-    &__about {
-      color: black;
-      transition: 100ms ease-in;
-      margin-right: 10px;
-      border-right: 1px solid black;
-      padding-right: 10px;
-
-      &:hover {
-        color: #eb5757;
-        transition: 100ms ease-in;
-      }
-    }
-
-    &__go {
-      color: black;
-      transition: 100ms ease-in;
-
-      &:hover {
-        color: #eb5757;
-        transition: 100ms ease-in;
-      }
-    }
+  &:nth-child(2n){
+    border-right: none;
   }
   &__tags {
     margin-bottom: 10px;
   }
+  &__title {
+    font-family: OpenSans-Bold, sans-serif;
+    display: inline;
+  }
+  &__desc {
+    display: inline;
+    margin-top: 10px;
+  }
 }
 .tag {
   padding: 2px 5px;
+  margin: 3px 1px;
   font-size: 12px;
-  display: inline;
-  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
   &__react {
-    background-color: #61dafb;
+    border-bottom: 2px solid #61dafb;
   }
   &__vue {
-    background-color: #4fc08d;
-    color: #fff;
+    border-bottom: 2px solid #4fc08d;
   }
 }
 .dropdown__menu__tag {
   width: 100%;
   position: relative;
-  display: flex;
-  align-items: flex-start;
+  display: inline-block;
   top: 2px;
   margin: 1px;
   box-sizing: border-box;
   padding: 10px 4px;
   border: 1px solid $border-color;
-  overflow: auto;
   //padding-top: 10px;
   > div {
     font-size: 16px;
