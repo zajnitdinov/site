@@ -1,0 +1,135 @@
+@import "variables";
+
+@font-face{
+  font-family: "Montserrat ExtraBold";
+  src: url("../fonts/Montserrat/Montserrat-ExtraBold.ttf") format('ttf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face{
+  font-family: 'OpenSans';
+  src: url("../fonts/OpenSans/OpenSans-Regular.ttf") format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: OpenSans, sans-serif;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.search {
+  &__input {
+    display: flex;
+    height: 30px;
+    width: 100%;
+    border: 1px solid $border-color;
+    margin-bottom: 30px;
+    padding: 3px 0;
+
+    &__text {
+      width: 70%;
+      height: 30px;
+      border-right: 1px solid $border-color;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__tags {
+      width: 30%;
+      height: 30px;
+      &__field {
+        height: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+.card {
+  position: relative;
+  width: 300px;
+  border-right: 1px solid $border-color;
+  padding-right: 20px;
+  &__title {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    display: block;
+    font-size: 24px;
+    color: #333333;
+  }
+  &__desc {
+    display: block;
+    margin-top: 10px;
+  }
+  &__link {
+    display: block;
+    margin-top: 10px;
+
+    &__about {
+      color: black;
+      transition: 100ms ease-in;
+      margin-right: 10px;
+      border-right: 1px solid black;
+      padding-right: 10px;
+
+      &:hover {
+        color: #eb5757;
+        transition: 100ms ease-in;
+      }
+    }
+
+    &__go {
+      color: black;
+      transition: 100ms ease-in;
+
+      &:hover {
+        color: #eb5757;
+        transition: 100ms ease-in;
+      }
+    }
+  }
+  &__tags {
+    margin-bottom: 10px;
+  }
+}
+.tag {
+  padding: 2px 5px;
+  font-size: 12px;
+  display: inline;
+  border-radius: 5px;
+  &__react {
+    background-color: #61dafb;
+  }
+  &__vue {
+    background-color: #4fc08d;
+    color: #fff;
+  }
+}
+.dropdown__menu__tag {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  top: 2px;
+  margin: 1px;
+  box-sizing: border-box;
+  padding: 10px 4px;
+  border: 1px solid $border-color;
+  overflow: auto;
+  //padding-top: 10px;
+  > div {
+    font-size: 16px;
+    margin: 5px;
+  }
+}
+
